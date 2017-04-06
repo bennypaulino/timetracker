@@ -23,7 +23,21 @@ gem 'jquery-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  # gem 'byebug'
+  gem 'guard'
+  # Auto-reload browser when files are saved.
+  gem 'guard-livereload'
+  # Run tests when files are saved.
+  gem 'guard-rspec'
+  gem 'rspec-rails'
+  # Integration testing for Rails.
+  gem 'capybara'
+  # Factories for instances of an ActiveRecord object.
+  gem 'factory_girl_rails'
+  # Clean up the database after test runs.
+  gem 'database_cleaner'
+  # Powerful matchers for testing models & controllers
+  gem 'shoulda-matchers'
 end
 
 group :development do
