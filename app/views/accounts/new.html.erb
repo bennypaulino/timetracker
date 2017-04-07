@@ -3,13 +3,11 @@
     <h2>Create an Account...</h2>
     <br>
     <%= simple_form_for @account, html: { class: 'form-horizontal' }, wrapper: :horizontal_form do |f| %>
-      <!-- <strong>Subdomain</strong> -->
       <%= f.label :subdomain %>
       <div class="input-group">
         <%= f.text_field :subdomain, placeholder: 'Enter your preferred subdomain', class: 'form-control' %>
         <span class="input-group-addon">timetracker.dev</span>
       </div>
-
       <br>
       <%= render 'shared/error_messages', object: f.object %>
       <br>
