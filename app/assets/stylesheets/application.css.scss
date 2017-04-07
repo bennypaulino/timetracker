@@ -1,0 +1,6 @@
+// "bootstrap-sprockets" must be imported before "bootstrap" & "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "layout";
+@import "welcome";
+@import "forms"
