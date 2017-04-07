@@ -20,6 +20,10 @@ gem 'jquery-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+group :test do
+  # Powerful matchers for testing models & controllers
+  gem 'shoulda-matchers', require: false
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -36,8 +40,6 @@ group :development, :test do
   gem 'factory_girl_rails'
   # Clean up the database after test runs.
   gem 'database_cleaner'
-  # Powerful matchers for testing models & controllers
-  gem 'shoulda-matchers'
 end
 
 group :development do
