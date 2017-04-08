@@ -11,10 +11,10 @@
         <%= sub_owner.text_field :email, required: true, class: 'form-control' %>
         <br>
         <%= f.label :password %>
-        <%= sub_owner.text_field :password, required: true, class: 'form-control', placeholder: 'minimum six characters' %>
+        <%= sub_owner.password_field :password, required: true, class: 'form-control', placeholder: 'minimum six characters' %>
         <br>
         <%= f.label :password_confirmation %>
-        <%= sub_owner.text_field :password_confirmation, required: true, class: 'form-control' %>
+        <%= sub_owner.password_field :password_confirmation, required: true, class: 'form-control' %>
         <br>
       <% end %>
       <%= f.label :subdomain %>
