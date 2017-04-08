@@ -3,9 +3,23 @@
     <h2>Create an Account...</h2>
     <br>
     <%= simple_form_for @account, html: { class: 'form-horizontal' }, wrapper: :horizontal_form do |f| %>
+      <%= f.simple_fields_for :owner do |sub_owner| %>
+        <%= f.label :username %>
+        <%= sub_owner.text_field :username, required: true, autofocus: true, class: 'form-control' %>
+        <br>
+        <%= f.label :email %>
+        <%= sub_owner.text_field :email, required: true, class: 'form-control' %>
+        <br>
+        <%= f.label :password %>
+        <%= sub_owner.text_field :password, required: true, class: 'form-control', placeholder: 'minimum six characters' %>
+        <br>
+        <%= f.label :password_confirmation %>
+        <%= sub_owner.text_field :password_confirmation, required: true, class: 'form-control' %>
+        <br>
+      <% end %>
       <%= f.label :subdomain %>
       <div class="input-group">
-        <%= f.text_field :subdomain, placeholder: 'Enter your preferred subdomain', class: 'form-control' %>
+        <%= f.text_field :subdomain, required: true, placeholder: 'Enter your preferred subdomain', class: 'form-control' %>
         <span class="input-group-addon">timetracker.dev</span>
       </div>
       <br>
