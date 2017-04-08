@@ -2,6 +2,10 @@ body {
   padding-top: 1.5em;
 }
 
+a {
+  color: #6721a1;
+}
+
 #flash_notice {
   @extend .alert;
   @extend .alert-success;

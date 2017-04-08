@@ -10,7 +10,7 @@
   background-color: #e6ddef;
 }
 
-.form-horizontal .form-control {
+.form-control {
   /*font-family: 'xxxxxx', sans-serif;*/
   &:focus {
     border-color: #a655ea;
@@ -33,4 +33,11 @@
 
 #my-btn:hover {
   background-color: #3b016b;
+}
+
+/* ---------LOG IN page ---------- */
+.signin {
+  h2 { margin-top: 0; }
+  form { margin-bottom: 1.3em }
+  .glyphicon { top: 0; }
 }
