@@ -8,6 +8,7 @@
 * Rails 4.2.8
 * PostgreSQL
 * Travis CI
+* Coveralls
 
 ### Automated Continuous Integration with Travis CI
 
@@ -21,3 +22,12 @@ Travis CI configuration how-to and example:
 - [.travis.yml](.travis.yml) - Travis CI's configuration file (with instructions)
 - [TimeTracker Travis CI build!](https://travis-ci.org/bennypaulino/timetracker)
 - Travis CI badge for TimeTracker: [![Build Status](https://travis-ci.org/bennypaulino/timetracker.svg?branch=master)](https://travis-ci.org/bennypaulino/timetracker)
+
+### Test Coverage with Coveralls
+
+[Coveralls](https://coveralls.io/) takes the build data from whichever CI service your project uses, parses it, and provides constant updates and statistics on your project's code coverage to show you how coverage has changed with the new build, and what isn't covered by tests. Coveralls even breaks down the test coverage on a file by file basis. You can see the relevant coverage, covered and missed lines, and the hits per line for each file, as well as quickly browse through individuals files that have changed in a new commit, and see exactly what changed in the build coverage.
+
+Coveralls how-to:
+- [Installation & Configuration](https://coveralls.zendesk.com/hc/en-us/articles/201769485-Ruby-Rails)
+- [Coveralls Statistics for TimeTracker!](https://coveralls.io/github/bennypaulino/timetracker)
+- Coveralls badge for TimeTracker: [![Coverage Status](https://coveralls.io/repos/github/bennypaulino/timetracker/badge.svg?branch=subdomains)](https://coveralls.io/github/bennypaulino/timetracker?branch=subdomains)
