@@ -45,6 +45,8 @@ group :development, :test do
   gem 'factory_girl_rails'
   # Clean up the database after test runs.
   gem 'database_cleaner'
+  # Evaluate test coverage.
+  gem 'coveralls', require: false
 end
 
 group :development do
