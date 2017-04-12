@@ -32,6 +32,8 @@ RSpec.configure do |config|
 
   config.after(:each) do
     DatabaseCleaner.clean
+    Apartment::Database.reset
+    drop_schemas
   end
 end
 
