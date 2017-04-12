@@ -1,8 +1,22 @@
 require 'rails_helper'
 
 describe 'account creation' do
+  let(:subdomain) { FactoryGirl.generate(:subdomain) }
+  before(:each) { sign_up(subdomain) }
+
   it 'allows user to create account' do
-    visit root_path
+    expect(page.current_url).to include(subdomain)
+    expect(Account.all.count).to eq(1)
+  end
+
+  it 'allows access of subdomain' do
+    visit root_url(subdomain: subdomain)
+    puts page.current_url
+    expect(page.current_url).to include(subdomain)
+  end
+
+  def sign_up(subdomain)
+    visit root_url(subdomain: false)
     click_link 'Create Account'
     # puts page.html
 
@@ -10,9 +24,7 @@ describe 'account creation' do
     fill_in 'account_owner_attributes_email', with: 'indiana@jones.com'
     fill_in 'account_owner_attributes_password', with: 'templeofdoom'
     fill_in 'account_owner_attributes_password_confirmation', with: 'templeofdoom'
-    fill_in 'Subdomain', with: 'test_subdomain'
+    fill_in 'Subdomain', with: subdomain
     click_button 'Create Account'
-
-    expect(page).to have_content('Signed up successfully')
   end
 end
