@@ -8,6 +8,7 @@ require 'database_cleaner'
 require 'capybara/rspec'
 require 'coveralls'
 require 'support/subdomains'
+require 'factory_girl_rails'
 Coveralls.wear!
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }

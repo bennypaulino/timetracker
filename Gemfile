@@ -46,7 +46,7 @@ group :development, :test do
   # Integration testing for Rails.
   gem 'capybara'
   # Factories for instances of an ActiveRecord object.
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails'#, require: false
   # Clean up the database after test runs.
   gem 'database_cleaner'
   # Evaluate test coverage.

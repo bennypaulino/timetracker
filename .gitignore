@@ -13,4 +13,4 @@
 /tmp
 
 # Ignore files related to Coveralls
-*/coverage/.resultset.json
+/coverage/.resultset.json
