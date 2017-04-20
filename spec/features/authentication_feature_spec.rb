@@ -1,6 +1,7 @@
 require 'rails_helper'
+require 'spec_helper'
 
-describe 'user authentication'do
+describe 'user authentication' do
   let(:user) { build(:user) }
   let!(:account) { create(:account_with_schema, owner: user) }
 

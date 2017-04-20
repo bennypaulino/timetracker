@@ -28,8 +28,10 @@ gem 'jquery-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 group :test do
-  # Powerful matchers for testing models & controllers
+  # Powerful matchers for testing models & controllers.
   gem 'shoulda-matchers', require: false
+  # Ruby wrapper for PhantomJS headless browser.
+  gem 'poltergeist'
 end
 
 group :development, :test do
