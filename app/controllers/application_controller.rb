@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
       # Apartment::Tenant.switch!(current_account.subdomain)
       Apartment::Tenant.switch!(account.subdomain)
     else
-      redirect_to root_url(subdomain: :false)
+      redirect_to root_url(subdomain: nil)
     end
   end
 

@@ -1,5 +1,5 @@
 require 'rails_helper'
-require 'spec_helper'
+#require 'spec_helper'
 
 describe 'user authentication' do
   let(:user) { build(:user) }
@@ -17,7 +17,10 @@ describe 'user authentication' do
   end
 
   it "doesn't allow user to signin unless on subdomain" do
-    expect { visit new_user_session_path }.to raise_error ActionController::RoutingError
+    visit new_user_session_path
+    # user should be redirected to root
+    expect(page.current_url).to eq('http://lvh.me/')
+    expect(page).to have_content('Create Account')
   end
 
   it 'does not allow user from one subdomain to sign in on another subdomain' do
