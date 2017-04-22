@@ -6,6 +6,7 @@ describe 'account creation' do
   before(:each) { sign_up(subdomain) }
 
   it 'allows user to create account' do
+    visit switch_to_subdomain(subdomain)
     expect(page.current_url).to include(subdomain)
     expect(Account.all.count).to eq(1)
   end
