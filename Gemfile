@@ -10,6 +10,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'sprockets-rails', '>= 2.1.4'
 gem 'simple_form'
 gem 'devise'
+# Database multi-tenancy for Rails applications.
+gem 'apartment'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -26,8 +28,10 @@ gem 'jquery-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 group :test do
-  # Powerful matchers for testing models & controllers
+  # Powerful matchers for testing models & controllers.
   gem 'shoulda-matchers', require: false
+  # Ruby wrapper for PhantomJS headless browser.
+  gem 'poltergeist'
 end
 
 group :development, :test do
@@ -42,9 +46,11 @@ group :development, :test do
   # Integration testing for Rails.
   gem 'capybara'
   # Factories for instances of an ActiveRecord object.
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', require: false
   # Clean up the database after test runs.
   gem 'database_cleaner'
+  # Evaluate test coverage.
+  gem 'coveralls', require: false
 end
 
 group :development do

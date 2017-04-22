@@ -11,3 +11,9 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore files related to Coveralls
+/coverage/.resultset.json
+
+# Ignore secret keys
+config/secrets.yml

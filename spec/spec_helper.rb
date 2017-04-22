@@ -6,10 +6,17 @@ require 'shoulda/matchers'
 require 'rspec/autorun'
 require 'database_cleaner'
 require 'capybara/rspec'
+require 'coveralls'
+require 'support/subdomains'
+require 'factory_girl_rails'
+Coveralls.wear!
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
 ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
+
+# Capybara.app_host = 'http://example.com'
+# Capybara.app_host = "http://mysubdomain.lvh.me/"
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
@@ -28,6 +35,8 @@ RSpec.configure do |config|
 
   config.after(:each) do
     DatabaseCleaner.clean
+    Apartment::Tenant.reset
+    drop_schemas
   end
 end
 
