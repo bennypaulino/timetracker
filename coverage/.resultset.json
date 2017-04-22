@@ -289,6 +289,13 @@
         null,
         null
       ],
+      "/home/benny/workspace/timetracker/app/controllers/projects_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
       "/home/benny/workspace/timetracker/app/controllers/application_controller.rb": [
         1,
         1,
@@ -298,29 +305,22 @@
         1,
         null,
         1,
-        57,
-        57,
+        58,
+        58,
         null,
-        39,
+        40,
         37,
         null,
-        2,
+        3,
         null,
         null,
         null,
         1,
-        77,
+        78,
         null,
         1,
         null,
         1,
-        1,
-        null,
-        null
-      ],
-      "/home/benny/workspace/timetracker/app/controllers/projects_controller.rb": [
-        1,
-        null,
         1,
         null,
         null
@@ -369,6 +369,6 @@
         null
       ]
     },
-    "timestamp": 1492891599
+    "timestamp": 1492894647
   }
 }
