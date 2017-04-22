@@ -8,7 +8,7 @@ describe 'invitations' do
   it 'shows the owner in the authorized users list' do
     sign_in_user(user, subdomain: account.subdomain)
     visit users_url(subdomain: account.subdomain)
-    expect(page).to have_content user.name
+    expect(page).to have_content user.username
     expect(page).to have_selector '.glyphicon-ok'
   end
 end
