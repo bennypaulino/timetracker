@@ -25,18 +25,32 @@ RSpec.configure do |config|
   config.order = "random"
 
   config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
+    # Clean all tables to start
     DatabaseCleaner.clean_with(:truncation)
+    # Use transactions for tests
+    DatabaseCleaner.strategy = :transaction
+    # Truncating doesn't drop schemas, ensure it's clean, app *may not* exist
+    Apartment::Tenant.drop('test-schema') rescue nil
+    # Create the default tenant for tests
+    Account.create!(subdomain: 'test-schema',
+                    owner: User.create(username: "boaty",
+                                       email: "boaty@mcboatface.com",
+                                       password: "password",
+                                       password_confirmation: "password"))
   end
 
   config.before(:each) do
+    # Start transaction for this test
     DatabaseCleaner.start
+    # Switch into the default tenant
+    # Apartment::Tenant.switch! 'test-schema'
   end
 
   config.after(:each) do
-    DatabaseCleaner.clean
+    # Reset tentant back to `public`
     Apartment::Tenant.reset
-    drop_schemas
+    # Rollback transaction
+    DatabaseCleaner.clean
   end
 end
 

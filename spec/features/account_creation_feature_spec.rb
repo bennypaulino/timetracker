@@ -1,5 +1,5 @@
 require 'rails_helper'
-# require 'spec_helper'
+require 'spec_helper'
 
 describe 'account creation' do
   let(:subdomain) { FactoryGirl.generate(:subdomain) }
@@ -8,7 +8,7 @@ describe 'account creation' do
   it 'allows user to create account' do
     visit switch_to_subdomain(subdomain)
     expect(page.current_url).to include(subdomain)
-    expect(Account.all.count).to eq(1)
+    expect(Account.all.count).to eq(2)
   end
 
   it 'allows access of subdomain' do
@@ -21,12 +21,12 @@ describe 'account creation' do
     subdomain2 = "#{subdomain}2"
     sign_up(subdomain2)
     expect(page.current_url).to include(subdomain2)
-    expect(Account.all.count).to eq(2)
+    expect(Account.all.count).to eq(3)
   end
 
   it 'does not allow account creation on subdomain' do
     user = User.first
-    subdomain = Account.first.subdomain
+    subdomain = Account.second.subdomain
     sign_in_user(user, subdomain: subdomain)
     expect { visit new_account_url(subdomain: subdomain) }.to raise_error ActionController::RoutingError
   end

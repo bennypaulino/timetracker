@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# Account.create!(subdomain: 'test-schema',
+#                 owner: User.create(username: "boaty",
+#                                    email: "boaty@mcboatface.com",
+#                                    password: "password",
+#                                    password_confirmation: "password"))
