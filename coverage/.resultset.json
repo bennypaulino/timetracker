@@ -3,25 +3,25 @@
     "coverage": {
       "/home/benny/workspace/timetracker/spec/support/macros.rb": [
         1,
-        25,
-        25,
+        26,
+        26,
         null,
         null,
         null,
         null,
         null,
         null,
-        25,
+        26,
         0,
         null,
         null,
         null,
         1,
         null,
-        6,
-        6,
-        6,
-        6,
+        7,
+        7,
+        7,
+        7,
         null
       ],
       "/home/benny/workspace/timetracker/spec/features/account_creation_feature_spec.rb": [
@@ -164,6 +164,22 @@
         null,
         null
       ],
+      "/home/benny/workspace/timetracker/spec/features/invitations_feature_spec.rb": [
+        1,
+        1,
+        null,
+        1,
+        2,
+        2,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/home/benny/workspace/timetracker/spec/features/subdomain_feature_spec.rb": [
         1,
         1,
@@ -289,22 +305,20 @@
         1,
         null,
         1,
-        54,
-        54,
+        58,
+        58,
         null,
-        36,
-        null,
-        36,
-        null,
-        33,
+        40,
+        37,
         null,
         3,
         null,
         null,
         null,
+        1,
+        78,
         null,
-        null,
-        null,
+        1,
         null,
         1,
         1,
@@ -315,6 +329,13 @@
         1,
         1,
         null,
+        1,
+        null,
+        null
+      ],
+      "/home/benny/workspace/timetracker/app/controllers/users_controller.rb": [
+        1,
+        1,
         1,
         null,
         null
@@ -348,6 +369,6 @@
         null
       ]
     },
-    "timestamp": 1492878993
+    "timestamp": 1492894647
   }
 }
