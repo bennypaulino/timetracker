@@ -3,6 +3,8 @@ rvm:
   - 2.3.3
 
 bundler_args: --without development assets tds
+before_script:
+    - psql -c 'create database timetracker_test;' -U postgres
 script:
     - RAILS_ENV=test
     - bundle exec rake db:test:prepare
