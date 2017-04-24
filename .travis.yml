@@ -23,10 +23,9 @@ cache:
     - "phantomjs --version"
 
   before_script:
-    - psql -c 'create database timetracker_test;' -U postgres
-    - psql -c 'create database travis_ci_test;' -U postgres
     - cp config/database.yml.travis config/database.yml
-    - bin/rake db:create:all
+    - psql -c 'create database timetracker_test;' -U postgres
+    - bundle exec rake db:create:all
     - bundle exec rake db:test:prepare
 
   script:
