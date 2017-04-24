@@ -2,9 +2,30 @@ language: ruby
 rvm:
   - 2.3.3
 
-bundler_args: --without development assets tds
-before_script:
+sudo: required
+
+services:
+  - postgresql
+
+cache:
+  directories:
+    - travis_phantomjs
+
+  env:
+    RAILS_ENV=test
+    SECRET_KEY_BASE="$(bundle exec rake secret)"
+
+  before_install:
+    - "export PATH=$PWD/travis_phantomjs/phantomjs-2.1.1-linux-x86_64/bin:$PATH"
+    - "if [ $(phantomjs --version) != '2.1.1' ]; then rm -rf $PWD/travis_phantomjs; mkdir -p $PWD/travis_phantomjs; fi"
+    - "if [ $(phantomjs --version) != '2.1.1' ]; then wget https://assets.membergetmember.co/software/phantomjs-2.1.1-linux-x86_64.tar.bz2 -O $PWD/travis_phantomjs/phantomjs-2.1.1-linux-x86_64.tar.bz2; fi"
+    - "if [ $(phantomjs --version) != '2.1.1' ]; then tar -xvf $PWD/travis_phantomjs/phantomjs-2.1.1-linux-x86_64.tar.bz2 -C $PWD/travis_phantomjs; fi"
+    - "phantomjs --version"
+
+  before_script:
     - psql -c 'create database timetracker_test;' -U postgres
-script:
-    - RAILS_ENV=test
+    - cp config/database.yml.travis config/database.yml
     - bundle exec rake db:test:prepare
+
+  script:
+    - bundle exec rspec
