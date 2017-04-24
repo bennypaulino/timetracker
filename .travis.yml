@@ -5,5 +5,4 @@ rvm:
 bundler_args: --without development assets tds
 script:
     - RAILS_ENV=test
-        - bundle exec rake test
-before_script:
+    - bundle exec rake db:test:prepare
